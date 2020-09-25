@@ -1,16 +1,16 @@
 const axios = require('axios');
 
 const instruments = [
-  {type:'Marimba One', price: 10000},
-  {type:'Electric Guitar', price: 200},
-  {type:'Acoustic Guitar', price: 300},
-  {type:'Vibraphone', price: 5000},
-  {type:'Ukulele', price: 50},
-  {type:'Bongo', price: 70},
-  {type:'Triangle', price: 15},
-  {type:'Grand Piano', price: 12000},
-  {type:'Steel Drum', price: 400},
-  {type:'Xylophone', price: 2000}
+  {name:'Marimba One', price: 10000},
+  {name:'Electric Guitar', price: 200},
+  {name:'Acoustic Guitar', price: 300},
+  {name:'Vibraphone', price: 5000},
+  {name:'Ukulele', price: 50},
+  {name:'Bongo', price: 70},
+  {name:'Triangle', price: 15},
+  {name:'Grand Piano', price: 12000},
+  {name:'Steel Drum', price: 400},
+  {name:'Xylophone', price: 2000}
 ]
 
 const purchasedInstruments = [];
@@ -35,12 +35,12 @@ module.exports = {
     res.status(200).send(purchasedInstruments)
   },
   purchaseItem: (req, res) => {
-    const { instrument } = req.body;
+    const { name } = req.body;
 
-    instrument.id = newId;
+    name.id = newId;
     newId++
 
-    purchasedInstruments.push(instrument)
+    purchasedInstruments.push(name)
     res.status(200).send(this.purchasedInstruments)
   },
   editPrice: (req, res) => {
