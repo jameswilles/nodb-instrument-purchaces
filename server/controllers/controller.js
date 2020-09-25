@@ -14,7 +14,7 @@ const instruments = [
 const purchasedInstruments = [
   {id: 1, name:'Keyboard', price: 500}
 ];
-let newId = 2;
+id = 2
 
 
 module.exports = {
@@ -34,16 +34,22 @@ module.exports = {
     res.status(200).send(purchasedInstruments)
   },
   purchaseItem: (req, res) => {
-    //add an item to the purchasedInstruments array
+    const { name } = req.body
+    name.id = id
+    id++
+    purchasedInstruments.push(name)
     res.status(200).send(purchasedInstruments)
   },
   editPrice: (req, res) => {
-    //edit the price of an object inside the purchasedInstruments array
+    const { id } = req.params
+    const { price } = req.body
+    let item = purchasedInstruments.find(element => element.id === +id )
+    item.price = price
     res.status(200).send(purchasedInstruments)
   },
   sellItem: (req, res) => {
     const {id} = req.params;
-    //using the id param, find and remove an item from the purchasedInstruments array
+    let index = purchasedInstruments.findIndex(element => element.id === +id)
     purchasedInstruments.splice(index, 1)
     res.status(200).send(purchasedInstruments)
   }
