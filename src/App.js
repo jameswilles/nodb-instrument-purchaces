@@ -12,6 +12,8 @@ export default class App extends Component {
     this.state = {
       purchased: []
     }
+
+    this.purchaseInstrument = this.purchaseInstrument.bind(this)
   }
 
   componentDidMount() {
@@ -23,7 +25,7 @@ export default class App extends Component {
   }
 
   purchaseInstrument(instrument){
-    axios.post('/api/purchased-instruments', {name: instrument}) //might not work... i'm a little confused here
+    axios.post('/api/purchased-instruments', {name: instrument})
     .then(res => {
       this.setState({ purchased: res.data})
     })

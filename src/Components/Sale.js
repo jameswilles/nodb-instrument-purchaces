@@ -10,7 +10,7 @@ export default class Sale extends Component {
   render() {
     return(
       <div onClick={this.handlePurchase}>
-        <p>{this.props.instrument.instrument}</p>
+        <p>{this.props.instrument.name}</p>
         <p>{this.props.instrument.price}</p>
       </div>
     )

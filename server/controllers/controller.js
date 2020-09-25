@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const instruments = [
   {name:'Marimba One', price: 10000},
   {name:'Electric Guitar', price: 200},
@@ -19,17 +17,7 @@ let newId = 1;
 
 module.exports = {
   getForSale: (req, res) => {
-
-    const forSale = []; 
-    const rand1 = Math.ceil((Math.random() * 10) - 1);
-    const rand2 = Math.ceil((Math.random() * 10) - 1);
-    const rand3 = Math.ceil((Math.random() * 10) - 1);
-
-    forSale.push(instruments[rand1]);
-    forSale.push(instruments[rand2]);
-    forSale.push(instruments[rand3]);
-
-    res.status(200).send(forSale);
+    res.status(200).send(instruments)
   },
   getPurchasedInstruments: (req, res) => {
     res.status(200).send(purchasedInstruments)

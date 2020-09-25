@@ -3,8 +3,8 @@ import Sale from './Sale';
 import axios from 'axios';
 
 export default class Finder extends Component {
-  constructor(props) {
-    super(props) //I don't know why super is crossed out like that
+  constructor() {
+    super()
     this.state = {
       forSale: []
     }
