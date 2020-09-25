@@ -1,4 +1,5 @@
 const express = require('express');
+const { getPurchasedInstruments } = require('./controllers/controller');
 const ctrl = require('./controllers/controller')
 
 const app = express();

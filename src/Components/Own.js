@@ -24,7 +24,7 @@ export default class Own extends Component {
 
   render() {
     return(
-      <div>
+      <div className='own-item item'>
         <p>{this.props.instrument.name}</p>
         {this.state.isEditing
         ? (
@@ -36,7 +36,7 @@ export default class Own extends Component {
           </div>
         ) : (
           <div>
-            <p>{this.props.instrument.price}</p>
+            <p> $ {this.props.instrument.price} </p>
             <button onClick={this.handleToggle}> Edit Price </button>
           </div>
         )}

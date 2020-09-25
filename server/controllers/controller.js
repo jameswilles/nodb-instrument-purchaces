@@ -11,8 +11,10 @@ const instruments = [
   {name:'Xylophone', price: 2000}
 ]
 
-const purchasedInstruments = [];
-let newId = 1;
+const purchasedInstruments = [
+  {id: 1, name:'Keyboard', price: 500}
+];
+let newId = 2;
 
 
 module.exports = {
@@ -32,26 +34,16 @@ module.exports = {
     res.status(200).send(purchasedInstruments)
   },
   purchaseItem: (req, res) => {
-    const { name } = req.body;
-
-    name.id = newId;
-    newId++
-
-    purchasedInstruments.push(name)
-    res.status(200).send(this.purchasedInstruments)
+    //add an item to the purchasedInstruments array
+    res.status(200).send(purchasedInstruments)
   },
   editPrice: (req, res) => {
-    const {id} = req.params;
-    const {price} = req.body;
-
-    const instrument = purchasedInstruments.find(element => element.id === +id);
-    instrument.price = price;
+    //edit the price of an object inside the purchasedInstruments array
     res.status(200).send(purchasedInstruments)
   },
   sellItem: (req, res) => {
     const {id} = req.params;
-
-    const index = purchasedInstruments.findIndex(element => element.id === +id)
+    //using the id param, find and remove an item from the purchasedInstruments array
     purchasedInstruments.splice(index, 1)
     res.status(200).send(purchasedInstruments)
   }

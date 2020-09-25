@@ -31,7 +31,7 @@ export default class Finder extends Component {
         refreshFn={this.getForSale} />
     ))
     return(
-      <div>
+      <div className='for-sale'>
         {mappedInstruments}
       </div>
     )

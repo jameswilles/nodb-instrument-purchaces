@@ -10,9 +10,9 @@ const List = (props) => {
       sellFn={props.sellFn} />
   ))
   return(
-    <div>
-      <h1> Your Instruments: </h1>
-      <div>
+    <div className='own-display'>
+      <h1 className='list-title'> Your Instruments: </h1>
+      <div className='own-list'>
         {mappedPurchases}
       </div>
     </div>
