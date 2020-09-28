@@ -19,15 +19,8 @@ id = 2
 
 module.exports = {
   getForSale: (req, res) => {
-    const forSale = [];
+    const forSale = instruments;
 
-    const rand1 = Math.ceil((Math.random() * 10)-1);
-    const rand2 = Math.ceil((Math.random() * 10)-1);
-    const rand3 = Math.ceil((Math.random() * 10)-1);
-
-    forSale.push(instruments[rand1]);
-    forSale.push(instruments[rand2]);
-    forSale.push(instruments[rand3]);
     res.status(200).send(forSale)
   },
   getPurchasedInstruments: (req, res) => {
