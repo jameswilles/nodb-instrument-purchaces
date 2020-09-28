@@ -11,10 +11,8 @@ const instruments = [
   {name:'Xylophone', price: 2000}
 ]
 
-const purchasedInstruments = [
-  {id: 1, name:'Keyboard', price: 500}
-];
-id = 2
+const purchasedInstruments = [];
+id = 1
 
 
 module.exports = {

@@ -28,7 +28,7 @@ export default class Own extends Component {
         <p>{this.props.instrument.name}</p>
         {this.state.isEditing
         ? (
-          <div>
+          <div className='price-changer'>
             <input
               value={this.state.input}
               onChange={e => this.handleInput(e.target.value)} />
